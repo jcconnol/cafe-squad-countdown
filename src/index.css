@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #282c34;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.time-display {
+  font-size: 4rem;
+  margin: 20px;
+}
+
+.message {
+  font-size: 2rem;
+  color: #61dafb;
+}

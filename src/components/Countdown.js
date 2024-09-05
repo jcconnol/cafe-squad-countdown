@@ -1,25 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const CountdownContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #282c34;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-`;
-
 const TimeDisplay = styled.div`
   font-size: 4rem;
   margin: 20px;
-`;
-
-const Message = styled.div`
-  font-size: 2rem;
-  color: #61dafb;
 `;
 
 const Countdown = () => {
@@ -54,10 +38,7 @@ const Countdown = () => {
   }, []);
 
   return (
-    <CountdownContainer>
-      <Message>Countdown to Cafe Squad</Message>
-      <TimeDisplay>{timeLeft}</TimeDisplay>
-    </CountdownContainer>
+    <TimeDisplay>{timeLeft}</TimeDisplay>
   );
 };
 
