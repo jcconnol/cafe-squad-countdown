@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Countdown from './components/Countdown';
 import RandomMotto from './components/RandomMotto';
+import GifShower from './components/GifShower';
 import './App.css';
 
 const CountdownContainer = styled.div`
@@ -27,6 +28,7 @@ function App() {
         <Message>Countdown to Cafe Squad</Message>
         <Countdown />
         <RandomMotto />
+        <GifShower />
       </CountdownContainer>
     </div>
   );

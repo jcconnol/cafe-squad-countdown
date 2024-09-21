@@ -15,7 +15,17 @@ const Countdown = () => {
       const nextTarget = new Date();
       nextTarget.setHours(13, 0, 0, 0); // 1:00 PM
 
-      if (now > nextTarget) {
+      // If the time is between 1:00 PM and 1:15 PM
+      const fifteenMinutesAfter = new Date(nextTarget);
+      fifteenMinutesAfter.setMinutes(fifteenMinutesAfter.getMinutes() + 15);
+
+      if (now >= nextTarget && now < fifteenMinutesAfter) {
+        setTimeLeft('Cafe squad is happening now');
+        return;
+      }
+
+      // If the current time is after 1:15 PM, set the target to the next day
+      if (now >= fifteenMinutesAfter) {
         nextTarget.setDate(nextTarget.getDate() + 1);
       }
 
@@ -37,9 +47,7 @@ const Countdown = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  return (
-    <TimeDisplay>{timeLeft}</TimeDisplay>
-  );
+  return <TimeDisplay>{timeLeft}</TimeDisplay>;
 };
 
 export default Countdown;
